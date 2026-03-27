@@ -1,0 +1,23 @@
+name: Explore GitHub Components
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Display runner info
+        run: |
+          echo "Running on: $RUNNER_OS"
+          echo "Runner Arch: $RUNNER_ARCH"
+          echo "workspace: $GITHUB_WORKSPACE"
+          echo "repository: $GITHUB_REPOSITORY" 
+          echo "event name: $GITHUB_EVENT_NAME"
+          echo "sha: $GITHUB_SHA"
