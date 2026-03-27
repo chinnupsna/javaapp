@@ -1,6 +1,6 @@
 name: Explore GitHub Components
 
-on:
+on: 
   push:
     branches: [main]
   workflow_dispatch:
