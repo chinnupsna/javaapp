@@ -40,3 +40,12 @@ jobs:
     steps:
       - name: Run tests
         run: echo "Running tests..."
+
+  notify:
+    name: Notify job
+    runs-on: ubuntu-latest
+    needs: [build, test-job]
+    if: always() # Ensure this runs even if previous jobs fail
+    steps:
+      - name: Send notification
+        run: echo "Tests completed. Sending notification..."      
